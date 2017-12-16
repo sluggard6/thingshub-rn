@@ -1,0 +1,3 @@
+rootProject.name = 'thingshub'
+
+include ':app'

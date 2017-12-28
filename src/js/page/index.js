@@ -5,6 +5,7 @@ import {
   View,
   StatusBar
 } from 'react-native'
+import ScrollableTabView from 'react-native-scrollable-tab-view'
 import Global from '../util/global'
 import FullView from '../util/full_view'
 
@@ -13,7 +14,9 @@ export default class TimeLine extends Component {
   render(){
     return(
       <FullView>
-        <Text>I'm Index</Text>
+        <ScrollableTabView>
+          <TimeLine/>
+        </ScrollableTabView>
       </FullView>
     )
   }

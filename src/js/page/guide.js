@@ -7,7 +7,8 @@ import {
   Button,
   Image,
   ImageBackground,
-  ScrollView
+  ScrollView,
+  ImageStyle
 } from 'react-native'
 import Global from '../util/global'
 import FullView from '../util/full_view'
@@ -24,7 +25,7 @@ const resetAction = NavigationActions.reset({
 export default class Guide extends Component {
 
   _onPressButton() {
-    this.props.navigation.dispatch(resetAction)
+    //this.props.navigation.dispatch(resetAction)
   }
 
   render(){
@@ -37,10 +38,10 @@ export default class Guide extends Component {
           pagingEnabled={true}
           removeClippedSubviews={true}
           horizontal={true}>
-          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage}/>
-          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage}/>
-          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage}>
-            <Button  title="Learn More" color="#841584" onPress={this._onPressButton.bind(this)} style={{margin: 100}}/>
+          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage} resizeMethod={Image.resizeMode.auto}/>
+          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage} resizeMethod={Image.resizeMode.auto}/>
+          <ImageBackground source={require('../../resources/image/guide.jpg')} style={styles.backgroundImage} resizeMethod={Image.resizeMode.auto}>
+            <Button  title="Learn More" color="#841584" onPress={this._onPressButton.bind(this)} style={{}}/>
           </ImageBackground>
         </ScrollView>
       </FullView>
@@ -60,8 +61,9 @@ var styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-end",
     alignItems: "center",
+    padding: 50,
     // margin: 5,
-    //resizeMode: Image.resizeMode.cover,
+    // resizeMode: Image.resizeMode.cover,
     overflow: "hidden"
   },
   indexContainer: {
